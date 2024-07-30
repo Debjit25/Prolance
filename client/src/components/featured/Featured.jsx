@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Featured.scss";
+import { IoSearch } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
 function Featured() {
@@ -14,25 +15,30 @@ function Featured() {
       <div className="container">
         <div className="left">
           <h1>
-            Find the perfect <span>freelance</span> services for your business
+            Connecting You to the Brightest
+            <br />
+            <span>Student Freelancers</span>
           </h1>
           <div className="search">
             <div className="searchInput">
-              <img src="./img/search.png" alt="" />
+              {/* <img src="./img/search.png" alt="" /> */}
               <input
                 type="text"
-                placeholder='Try "building mobil app"'
+                placeholder="Search for any service..."
                 onChange={(e) => setInput(e.target.value)}
               />
             </div>
-            <button onClick={handleSubmit}>Search</button>
+            <button onClick={handleSubmit}>
+              <IoSearch />
+            </button>
           </div>
           <div className="popular">
-            <span>Popular:</span>
+            {/* <p>Not sure How this works??</p> */}
+            {/* <span>Popular:</span>
             <button>Web Design</button>
             <button>WordPress</button>
             <button>Logo Design</button>
-            <button>AI Services</button>
+            <button>AI Services</button> */}
           </div>
         </div>
         <div className="right">

@@ -2,17 +2,25 @@
   height: 600px;
   display: flex;
   justify-content: center;
-  background-color: #013914;
   color: white;
+  border-radius: 20px;
+  margin: 2rem;
+  background-image: url("/img/Hero_img.jpg");
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
 
   .container {
-    width: 1400px;
     display: flex;
     align-items: center;
+    text-align: center;
+    padding-top: 44px;
 
     .left {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       gap: 30px;
 
       h1 {
@@ -25,22 +33,24 @@
       }
 
       .search {
+        width: 475px;
         background-color: white;
-        border-radius: 5px;
+        border-radius: 13px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         overflow: hidden;
 
         .searchInput {
+          padding-left: 24px ;
           display: flex;
           align-items: center;
           gap: 10px;
-          img {
-            width: 20px;
-            height: 20px;
-            margin: 10px;
-          }
+          // img {
+          //   width: 20px;
+          //   height: 20px;
+          //   margin: 10px;
+          // }
 
           input {
             border: none;
@@ -48,18 +58,30 @@
 
             &::placeholder {
               color: gray;
+              font-size: 14px;
             }
           }
         }
 
         button {
-          width: 120px;
+          width: 70px;
           height: 50px;
+          padding-top: 5px;
+          margin: 4px;
+          font-size: 26px;
+          border-radius: 10px;
           border: none;
-          background-color: #1dbf73;
+          background-color: #191e24;
           color: white;
           align-self: flex-end;
           cursor: pointer;
+          // transition: all;
+        }
+
+
+        button:hover{
+          background-color: #363434;
+          // transition: all;
         }
       }
 
@@ -68,8 +90,9 @@
         align-items: center;
         gap: 10px;
 
-        span {
+        h1 span {
           width: max-content;
+          text-align: center;
         }
 
         button {
@@ -80,6 +103,11 @@
           border-radius: 20px;
           background-color: transparent;
           font-size: 14px;
+        }
+
+        button:hover{
+          background-color: #363434 ;
+          cursor: pointer;
         }
       }
     }

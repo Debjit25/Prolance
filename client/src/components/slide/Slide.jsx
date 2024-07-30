@@ -31,13 +31,15 @@ const Slide = ({ children, slidesToShow, arrowsScroll }) => {
   };
 
   return (
-    <div className="slide">
-      <div className="container">
-        <Slider {...settings}>{children}</Slider>
+    <>
+      <div className="Popular">Popular Services</div>
+      <div className="slide">
+        <div className="container">
+          <Slider {...settings}>{children}</Slider>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
 export default Slide;
-

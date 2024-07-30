@@ -1,8 +1,16 @@
+.Popular {
+  display: flex;
+    justify-content: start;
+    align-items: start;
+    font-size: 55px;
+    padding-left: 3rem;
+}
+
 .slide {
   display: flex;
   justify-content: center;
-  padding: 100px 0px;
-  
+  padding: 35px;
+
   .container {
     width: 1400px;
     position: relative;
