@@ -1,154 +1,177 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.scss";
+import FadeInSection from "../../components/animation/fadeInSection";
 import Featured from "../../components/featured/Featured";
 // import TrustedBy from "../../components/trustedBy/TrustedBy";
 import Slide from "../../components/slide/Slide";
 import CatCard from "../../components/catCard/CatCard";
 import ProjectCard from "../../components/projectCard/ProjectCard";
 import { cards, projects } from "../../data";
+import Loading from "../../components/loader/Loading";
 
 function Home() {
+
+  const [loading, setLoading] = useState(true);
+
+   useEffect(() => {
+     const timer = setTimeout(() => setLoading(false), 2000); // Simulate loading time
+     return () => clearTimeout(timer);
+   }, []);
+
+   if (loading) {
+     return <Loading />;
+   }
+
   return (
     <div className="home">
       <Featured />
       {/* <TrustedBy /> */}
-      <Slide slidesToShow={5} arrowsScroll={5}>
-        {cards.map((card) => (
-          <CatCard key={card.id} card={card} />
-        ))}
-      </Slide>
+      <FadeInSection>
+        <Slide slidesToShow={5} arrowsScroll={5}>
+          {cards.map((card) => (
+            <CatCard key={card.id} card={card} />
+          ))}
+        </Slide>
+      </FadeInSection>
       <div className="features">
         <div className="container">
           <div className="item">
-            <div className="service">
-              <h1>A Universe of Talent at Your Fingertips</h1>
-              <div className="title">
-                <img src="./img/check.png" alt="" />
-                Top Talent for Every Budget
+            <FadeInSection>
+              <div className="service">
+                <h1>A Universe of Talent at Your Fingertips</h1>
+                <div className="title">
+                  <img src="./img/check.png" alt="" />
+                  Top Talent for Every Budget
+                </div>
+                <p>
+                  Find exceptional services at various price points. Enjoy
+                  transparent, project-based pricing with no hidden hourly
+                  rates.
+                </p>
+                <div className="title">
+                  <img src="./img/check.png" alt="" />
+                  Efficient Quality, Delivered Fast
+                </div>
+                <p>
+                  Connect with the right freelancer and kick off your project
+                  within minutes for quick and high-quality results.
+                </p>
+                <div className="title">
+                  <img src="./img/check.png" alt="" />
+                  Secure Payments, Guaranteed
+                </div>
+                <p>
+                  Know exactly what you'll pay upfront. Your funds are only
+                  released once you’re satisfied with the completed work.
+                </p>
+                <div className="title">
+                  <img src="./img/check.png" alt="" />
+                  24/7 support
+                </div>
+                <p>
+                  Access top-notch services any time of the day, with reliable
+                  support always at hand.
+                </p>
               </div>
-              <p>
-                Find exceptional services at various price points. Enjoy
-                transparent, project-based pricing with no hidden hourly rates.
-              </p>
-              <div className="title">
-                <img src="./img/check.png" alt="" />
-                Efficient Quality, Delivered Fast
-              </div>
-              <p>
-                Connect with the right freelancer and kick off your project
-                within minutes for quick and high-quality results.
-              </p>
-              <div className="title">
-                <img src="./img/check.png" alt="" />
-                Secure Payments, Guaranteed
-              </div>
-              <p>
-                Know exactly what you'll pay upfront. Your funds are only
-                released once you’re satisfied with the completed work.
-              </p>
-              <div className="title">
-                <img src="./img/check.png" alt="" />
-                24/7 support
-              </div>
-              <p>
-                Access top-notch services any time of the day, with reliable
-                support always at hand.
-              </p>
-            </div>
+            </FadeInSection>
           </div>
 
-          <div className="item">
-            <video src="./img/video.mp4" controls />
-          </div>
+          <FadeInSection>
+            <div className="item">
+              <video src="./img/video.mp4" controls />
+            </div>
+          </FadeInSection>
         </div>
       </div>
       <div className="explore">
-        <div className="container">
-          <h1>Explore the marketplace</h1>
-          <div className="items">
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/graphics-design.d32a2f8.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Graphics & Design</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/online-marketing.74e221b.svg"
-                alt=""
-              />
-              <div className="line"></div>
+        <FadeInSection>
+          <div className="container">
+            <h1>Explore the marketplace</h1>
+            <div className="items">
+              <div className="item">
+                <img
+                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/graphics-design.d32a2f8.svg"
+                  alt=""
+                />
+                <div className="line"></div>
+                <span>Graphics & Design</span>
+              </div>
+              <div className="item">
+                <img
+                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/online-marketing.74e221b.svg"
+                  alt=""
+                />
+                <div className="line"></div>
 
-              <span>Digital Marketing</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/writing-translation.32ebe2e.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Writing & Translation</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/video-animation.f0d9d71.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Video & Animation</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Music & Audio</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/programming.9362366.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Programming & Tech</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Business</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Lifestyle</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/data.718910f.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Data</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/photography.01cf943.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Photography</span>
+                <span>Digital Marketing</span>
+              </div>
+              <div className="item">
+                <img
+                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/writing-translation.32ebe2e.svg"
+                  alt=""
+                />
+                <div className="line"></div>
+                <span>Writing & Translation</span>
+              </div>
+              <div className="item">
+                <img
+                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/video-animation.f0d9d71.svg"
+                  alt=""
+                />
+                <div className="line"></div>
+                <span>Video & Animation</span>
+              </div>
+              <div className="item">
+                <img
+                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg"
+                  alt=""
+                />
+                <div className="line"></div>
+                <span>Music & Audio</span>
+              </div>
+              <div className="item">
+                <img
+                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/programming.9362366.svg"
+                  alt=""
+                />
+                <div className="line"></div>
+                <span>Programming & Tech</span>
+              </div>
+              <div className="item">
+                <img
+                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg"
+                  alt=""
+                />
+                <div className="line"></div>
+                <span>Business</span>
+              </div>
+              <div className="item">
+                <img
+                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg"
+                  alt=""
+                />
+                <div className="line"></div>
+                <span>Lifestyle</span>
+              </div>
+              <div className="item">
+                <img
+                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/data.718910f.svg"
+                  alt=""
+                />
+                <div className="line"></div>
+                <span>Data</span>
+              </div>
+              <div className="item">
+                <img
+                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/photography.01cf943.svg"
+                  alt=""
+                />
+                <div className="line"></div>
+                <span>Photography</span>
+              </div>
             </div>
           </div>
-        </div>
+        </FadeInSection>
       </div>
       {/* <div className="features dark">
         <div className="container">
@@ -187,11 +210,13 @@ function Home() {
           </div>
         </div>
       </div> */}
-      <Slide slidesToShow={4} arrowsScroll={4}>
-        {projects.map((card) => (
-          <ProjectCard key={card.id} card={card} />
-        ))}
-      </Slide>
+      <FadeInSection>
+        <Slide slidesToShow={4} arrowsScroll={4}>
+          {projects.map((card) => (
+            <ProjectCard key={card.id} card={card} />
+          ))}
+        </Slide>
+      </FadeInSection>
     </div>
   );
 }
