@@ -1,9 +1,11 @@
 .home {
   .features {
-    background-color: #f1fdf7;
+    background-color: white;
     display: flex;
+    margin: 2rem;
+    border-radius: 20px;
     justify-content: center;
-    padding: 100px 0px;
+    // padding: 100px 0px;
 
     &.dark {
       background-color: #0d084d;
@@ -45,8 +47,11 @@
       display: flex;
       align-items: center;
       gap: 200px;
+
       .item {
         display: flex;
+        // background-color: white;
+
         flex-direction: column;
         gap: 15px;
         &:first-child {
@@ -56,12 +61,13 @@
           flex: 3;
         }
 
-        img{
+        img {
           width: 100%;
         }
         h1 {
           font-weight: 500;
           margin-bottom: 10px;
+          color: white;
         }
         .title {
           display: flex;
@@ -69,22 +75,42 @@
           gap: 10px;
           font-weight: 500;
           font-size: 18px;
-          color: #666;
+          color:whitesmoke;
           img {
             width: 24px;
             height: 24px;
           }
         }
         p {
-          font-size: 18px;
+          font-size: 17px;
           font-weight: 300;
-          color: gray;
+          color: #918888;
           line-height: 28px;
           letter-spacing: 1px;
         }
 
-        video{
+        video {
           width: 720px;
+        }
+        .service {
+          // background: orange;
+          background: #000000; /* fallback for old browsers */
+          background: -webkit-linear-gradient(
+            to right,
+            #434343,
+            #000000
+          ); /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(
+            to right,
+            #434343,
+            #000000
+          ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+          border-radius: 20px;
+          width: 100%;
+          padding: 2rem;
+          margin: 2rem;
+          height: 100%;
         }
       }
     }
@@ -106,7 +132,7 @@
     .container {
       width: 1400px;
 
-      h1{
+      h1 {
         color: #555;
       }
 
@@ -132,19 +158,19 @@
             height: 50px;
           }
 
-          .line{
+          .line {
             width: 50px;
             height: 2px;
             background-color: lightgray;
-            transition: all .3s ease;
+            transition: all 0.3s ease;
           }
 
           span {
             font-weight: 300;
           }
 
-          &:hover{
-            .line{
+          &:hover {
+            .line {
               width: 80px;
               background-color: #1dbf73;
             }

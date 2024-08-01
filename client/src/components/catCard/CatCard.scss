@@ -2,14 +2,22 @@
   width: 252px;
   height: 344px;
   color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   position: relative;
   cursor: pointer;
+  overflow: hidden; /* Ensure the pop-out effect doesn't overflow the card */
 
   img {
     width: 100%;
     height: 100%;
+    border-radius: 20px;
     object-fit: cover;
+    transition: transform 0.2s ease-in-out; /* Smooth transition for the pop-out effect */
+  }
+
+  img:hover {
+    transform: scale(1.1); /* Pop-out effect by scaling the image */
+    border-radius: 20px;
   }
 
   .desc {
@@ -23,7 +31,7 @@
     position: absolute;
     top: 40px;
     left: 15px;
-    font-size:24px;
+    font-size: 24px;
     font-weight: 500;
   }
 }

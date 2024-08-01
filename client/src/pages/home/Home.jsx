@@ -20,40 +20,43 @@ function Home() {
       <div className="features">
         <div className="container">
           <div className="item">
-            <h1>A whole world of freelance talent at your fingertips</h1>
-            <div className="title">
-              <img src="./img/check.png" alt="" />
-              The best for every budget
+            <div className="service">
+              <h1>A Universe of Talent at Your Fingertips</h1>
+              <div className="title">
+                <img src="./img/check.png" alt="" />
+                Top Talent for Every Budget
+              </div>
+              <p>
+                Find exceptional services at various price points. Enjoy
+                transparent, project-based pricing with no hidden hourly rates.
+              </p>
+              <div className="title">
+                <img src="./img/check.png" alt="" />
+                Efficient Quality, Delivered Fast
+              </div>
+              <p>
+                Connect with the right freelancer and kick off your project
+                within minutes for quick and high-quality results.
+              </p>
+              <div className="title">
+                <img src="./img/check.png" alt="" />
+                Secure Payments, Guaranteed
+              </div>
+              <p>
+                Know exactly what you'll pay upfront. Your funds are only
+                released once you’re satisfied with the completed work.
+              </p>
+              <div className="title">
+                <img src="./img/check.png" alt="" />
+                24/7 support
+              </div>
+              <p>
+                Access top-notch services any time of the day, with reliable
+                support always at hand.
+              </p>
             </div>
-            <p>
-              Find high-quality services at every price point. No hourly rates,
-              just project-based pricing.
-            </p>
-            <div className="title">
-              <img src="./img/check.png" alt="" />
-              Quality work done quickly
-            </div>
-            <p>
-              Find the right freelancer to begin working on your project within
-              minutes.
-            </p>
-            <div className="title">
-              <img src="./img/check.png" alt="" />
-              Protected payments, every time
-            </div>
-            <p>
-              Always know what you'll pay upfront. Your payment isn't released
-              until you approve the work.
-            </p>
-            <div className="title">
-              <img src="./img/check.png" alt="" />
-              24/7 support
-            </div>
-            <p>
-              Find high-quality services at every price point. No hourly rates,
-              just project-based pricing.
-            </p>
           </div>
+
           <div className="item">
             <video src="./img/video.mp4" controls />
           </div>
@@ -147,7 +150,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="features dark">
+      {/* <div className="features dark">
         <div className="container">
           <div className="item">
             <h1>
@@ -183,7 +186,7 @@ function Home() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
       <Slide slidesToShow={4} arrowsScroll={4}>
         {projects.map((card) => (
           <ProjectCard key={card.id} card={card} />
