@@ -132,3 +132,40 @@
     }
   }
 }
+
+/* Change the background color during the fade effect */
+// .slick-slider .slick-list,
+// .slick-slider .slick-track {
+//     background-color: #000; /* Change to your desired background color */
+// }
+
+/* Optionally, you can add a transition effect */
+// .slick-slider .slick-track {
+//     transition: background-color 1s ease-in-out;
+// }
+
+/* Ensure this targets the correct component */
+.featured .slick-loading .slick-list {
+    background: #000 center center no-repeat !important;
+}
+
+/* Arrow styles for the Slick carousel */
+.slick-prev:before,
+.slick-next:before {
+    color: #000; /* Change to your desired arrow color */
+    font-size: 40px; /* Change arrow size if needed */
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before{
+    color: grey; /* Change to your desired hover color */
+}
+
+.slick-prev {
+    left: -30px; /* Adjust left arrow position */
+}
+
+.slick-next {
+    right: -30px; /* Adjust right arrow position */
+}
+

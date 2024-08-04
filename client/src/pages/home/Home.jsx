@@ -27,6 +27,7 @@ function Home() {
       <Featured />
       {/* <TrustedBy /> */}
       <FadeInSection>
+        <h1 className="Popular1">Popular Domain</h1>
         <Slide slidesToShow={5} arrowsScroll={5}>
           {cards.map((card) => (
             <CatCard key={card.id} card={card} />
@@ -211,6 +212,7 @@ function Home() {
         </div>
       </div> */}
       <FadeInSection>
+        <h1 className="Trending">Trending Projects</h1>
         <Slide slidesToShow={4} arrowsScroll={4}>
           {projects.map((card) => (
             <ProjectCard key={card.id} card={card} />
