@@ -44,8 +44,9 @@
 
     .container {
       width: 1400px;
+      // width: 100%;
       display: flex;
-      align-items: center;
+      // align-items: center;
       gap: 200px;
 
       .item {
@@ -179,7 +180,7 @@
           &:hover {
             .line {
               width: 80px;
-              background-color: #1dbf73;
+              background-color: black;
             }
           }
         }

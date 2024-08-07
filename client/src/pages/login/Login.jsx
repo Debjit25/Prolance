@@ -15,25 +15,25 @@ function Login() {
     try {
       const res = await newRequest.post("/auth/login", { username, password });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-      navigate("/")
+      navigate("/");
     } catch (err) {
       setError(err.response.data);
     }
   };
 
   return (
-    <div className="main">
-      <div className="side_img">
+    <div className="mainLogin">
+      {/* <div className="side_img">
         <img src="/img/Hero_img_1.jpg"></img>
-      </div>
-      <div className="login">
+      </div> */}
+      <div className="loginpage">
         <form onSubmit={handleSubmit}>
-          <h1>Sign in</h1>
+          <h1 className="loginh1">Sign in</h1>
           <label htmlFor="">Username</label>
           <input
             name="username"
             type="text"
-            placeholder="johndoe"
+            placeholder="username"
             onChange={(e) => setUsername(e.target.value)}
           />
 
@@ -43,7 +43,7 @@ function Login() {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Login</button>
+          <button type="submit" className="buttonLogin">Login</button>
           {error && error}
         </form>
       </div>

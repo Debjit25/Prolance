@@ -8,6 +8,8 @@ import CatCard from "../../components/catCard/CatCard";
 import ProjectCard from "../../components/projectCard/ProjectCard";
 import { cards, projects } from "../../data";
 import Loading from "../../components/loader/Loading";
+import {motion} from 'framer-motion'
+import CardFlip from "../../components/cardFlip/cardFlip";
 
 function Home() {
 
@@ -38,7 +40,7 @@ function Home() {
         <div className="container">
           <div className="item">
             <FadeInSection>
-              <div className="service">
+              {/* <div className="service">
                 <h1>A Universe of Talent at Your Fingertips</h1>
                 <div className="title">
                   <img src="./img/check.png" alt="" />
@@ -73,7 +75,8 @@ function Home() {
                   Access top-notch services any time of the day, with reliable
                   support always at hand.
                 </p>
-              </div>
+              </div> */}
+              <CardFlip/>
             </FadeInSection>
           </div>
 

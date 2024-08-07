@@ -44,7 +44,7 @@ function Featured() {
       </Slider>
       <div className="container">
         <div className="left">
-          <h1>
+          <h1 className="featuredh1">
             Connecting You to the Brightest
             <br />
             <span>Student Freelancers</span>
