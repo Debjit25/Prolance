@@ -22,26 +22,31 @@ function Login() {
   };
 
   return (
-    <div className="login">
-      <form onSubmit={handleSubmit}>
-        <h1>Sign in</h1>
-        <label htmlFor="">Username</label>
-        <input
-          name="username"
-          type="text"
-          placeholder="johndoe"
-          onChange={(e) => setUsername(e.target.value)}
-        />
+    <div className="main">
+      <div className="side_img">
+        <img src="/img/Hero_img_1.jpg"></img>
+      </div>
+      <div className="login">
+        <form onSubmit={handleSubmit}>
+          <h1>Sign in</h1>
+          <label htmlFor="">Username</label>
+          <input
+            name="username"
+            type="text"
+            placeholder="johndoe"
+            onChange={(e) => setUsername(e.target.value)}
+          />
 
-        <label htmlFor="">Password</label>
-        <input
-          name="password"
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-        {error && error}
-      </form>
+          <label htmlFor="">Password</label>
+          <input
+            name="password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Login</button>
+          {error && error}
+        </form>
+      </div>
     </div>
   );
 }

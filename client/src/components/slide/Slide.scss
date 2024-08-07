@@ -36,3 +36,15 @@
     left: -25px;
   }
 }
+
+.slick-prev:before, .slick-next:before {
+  // width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp{
+  display: flex;
+  justify-content: center;
+}

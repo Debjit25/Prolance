@@ -1,6 +1,9 @@
 .catCard {
   width: 252px;
   height: 344px;
+  display: flex;
+  justify-content: center;
+  
   color: white;
   border-radius: 20px;
   position: relative;
@@ -35,3 +38,8 @@
     font-weight: 500;
   }
 }
+
+// .main{
+//   display: flex;
+//   justify-content: center;
+// }

@@ -1,6 +1,7 @@
 .login {
   display: flex;
   align-items: center;
+  padding-right: 100px;
   justify-content: center;
 
   form {
@@ -41,4 +42,14 @@
       font-size: 12px;
     }
   }
+}
+
+.main{
+  display: flex;
+}
+
+.side_img{
+  display: flex;
+  width: 100%;
+  object-fit: cover;
 }
