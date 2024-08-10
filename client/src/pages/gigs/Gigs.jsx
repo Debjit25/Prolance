@@ -18,10 +18,10 @@ const Gigs = () => {
   return (
     <div className="gigs">
       <div className="container">
-        <span className="breadcrumbs">Liverr &gt; Graphics & Design &gt;</span>
+        <span className="breadcrumbs">Prolance &gt; Graphics & Design &gt;</span>
         <h1>AI Artists</h1>
         <p>
-          Explore the boundaries of art and technology with Liverr's AI artists
+          Explore the boundaries of art and technology with Prolance's AI artists
         </p>
         <div className="menu">
           <div className="left">
@@ -32,7 +32,7 @@ const Gigs = () => {
           </div>
           <div className="right" >
             <span className="sortBy">Sort by</span>
-            <div onClick={() => setOpen(!open)}>
+            <div className="sortbyDiv" onClick={() => setOpen(!open)}>
               <span className="sortType">
                 {sort === "sales" ? "Best Selling" : "Newest"}
               </span>
