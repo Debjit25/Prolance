@@ -1,9 +1,9 @@
 .Popular {
   display: flex;
-    justify-content: start;
-    align-items: start;
-    font-size: 55px;
-    padding-left: 3rem;
+  justify-content: start;
+  align-items: start;
+  font-size: 55px;
+  padding-left: 3rem;
 }
 
 .slide {
@@ -37,14 +37,15 @@
   }
 }
 
-.slick-prev:before, .slick-next:before {
+.slick-prev:before,
+.slick-next:before {
   // width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.temp{
+.temp {
   display: flex;
   justify-content: center;
 }

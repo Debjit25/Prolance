@@ -1,27 +1,39 @@
 .gig {
   display: flex;
   justify-content: center;
+  padding: 20px;
+  background-color: #f8f9fa;
 
   .container {
-    width: 1400px;
-    padding: 30px 0px;
+    // display: grid;
+    // padding: 5rem;
     display: flex;
-    gap: 50px;
-    
+    flex-direction: column;
+    grid-template-columns: 2fr 1fr; // Two columns layout
+    gap: 30px;
+    width: 1200px; // Adjust based on your design
+    grid-template-rows: auto 1fr auto; // Adjust the rows: header, content, and footer
+
     .left {
-      flex: 2;
+
       display: flex;
       flex-direction: column;
+      padding-left: 10rem;
       gap: 20px;
+      grid-row: 1 / 3; // Spans two rows
+      overflow: hidden; // Prevents content overflow
 
       .breadcrumbs {
         font-weight: 300;
         text-transform: uppercase;
         font-size: 13px;
-        color: #555;
+        color: #6c757d;
       }
 
       h1 {
+        font-size: 28px;
+        font-weight: 600;
+        color: #333;
       }
 
       .user {
@@ -29,16 +41,17 @@
         align-items: center;
         gap: 10px;
 
-        .pp {
-          width: 32px;
-          height: 32px;
+        img {
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           object-fit: cover;
         }
 
         span {
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 500;
+          color: #333;
         }
 
         .stars {
@@ -47,28 +60,67 @@
           gap: 5px;
 
           img {
-            height: 14px;
-            width: 14px;
+            height: 18px;
+            width: 18px;
           }
 
           span {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: bold;
-            color: #ffc108;
+            color: #ffc107;
           }
         }
       }
 
+      .sliderContainer {
+        display: flex;
+        justify-content: center;
+      }
+
       .slider {
-        background-color: #F5F5F5;
+        border-radius: 8px;
+        width: 90%;
+
+        .slick-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
+
+        .slick-prev,
+        .slick-next {
+          font-size: 24px;
+          z-index: 1;
+          color: black; // Change this to a color that will be visible
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+          font-size: 24px;
+          color: black; // Change this to a color that will be visible
+        }
+
+        .slick-prev {
+          left: -35px; // Adjust as needed to position the arrow correctly
+        }
+
+        .slick-next {
+          right: -35px; // Adjust as needed to position the arrow correctly
+        }
+
         img {
-          max-height: 500px;
-          object-fit: contain;
+          width: 100%;
+          max-height: 400px;
+          object-fit: cover;
+          border-radius: 8px;
         }
       }
 
       h2 {
-        font-weight: 400;
+        font-size: 22px;
+        font-weight: 500;
+        color: #333;
       }
 
       p {
@@ -78,7 +130,6 @@
       }
 
       .seller {
-        margin-top: 50px;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -113,7 +164,7 @@
               span {
                 font-size: 14px;
                 font-weight: bold;
-                color: #ffc108;
+                color: #ffc107;
               }
             }
 
@@ -122,6 +173,11 @@
               border-radius: 5px;
               border: 1px solid gray;
               padding: 10px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: #f8f9fa;
+              }
             }
           }
         }
@@ -130,19 +186,17 @@
           border: 1px solid lightgray;
           border-radius: 5px;
           padding: 20px;
-          margin-top: 20px;
 
           .items {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
+            gap: 20px;
 
             .item {
               width: 300px;
               display: flex;
               flex-direction: column;
               gap: 10px;
-              margin-bottom: 20px;
 
               .title {
                 font-weight: 300;
@@ -157,46 +211,48 @@
           }
         }
       }
-
-      
     }
 
     .right {
-      flex: 1;
+      max-width: 350px; // Restrict the width
       border: 1px solid lightgray;
       padding: 20px;
-      border-radius: 5px;
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
       gap: 20px;
-      height: max-content;
-      max-height: 500px;
       position: sticky;
       top: 150px;
+      background-color: #ffffff; // Adds a white background for contrast
 
       .price {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 10px;
 
-        h2{
-          font-weight: 300;
+        h2 {
+          font-weight: 600;
+          font-size: 24px;
+          color: #333;
         }
 
-        h3{
-          font-weight: 500;
+        h3 {
+          font-weight: 400;
+          font-size: 20px;
+          color: #555;
         }
       }
 
-      p{
-        color: gray;
+      p {
+        color: #555;
         margin: 10px 0px;
+        line-height: 1.5; // Improves text readability
       }
 
       .details {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 10px;
         font-size: 14px;
 
         .item {
@@ -205,35 +261,157 @@
           gap: 10px;
 
           img {
-            width: 20px;
+            width: 16px; // Scale down the image size
+            height: 16px; // Scale down the image size
           }
         }
       }
+      .features {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
 
-      .features{
-        .item{
+        .item {
           display: flex;
           align-items: center;
           gap: 10px;
-          font-weight: 300;
-          color: gray;
-          margin-bottom: 5px;
+          font-weight: 400;
+          color: #333;
 
-          img{
-            width: 14px;
+          img {
+            width: 18px;
           }
         }
       }
 
-      button{
-        background-color: #1dbf73;
-        padding: 10px;
+      button {
+        background-color: black;
+        padding: 12px;
         color: white;
         font-weight: 500;
         border: none;
-        font-size: 18px;
+        font-size: 16px;
         cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #333;
+        }
+      }
+    }
+
+    .reviews {
+      grid-column: 1 / 3; // Spans both columns
+      grid-row: 3 / 4; // Places reviews at the bottom
+      margin-top: 30px;
+
+      h2 {
+        font-size: 22px;
+        font-weight: 500;
+        color: #333;
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            span {
+              font-size: 16px;
+              font-weight: 500;
+              color: #333;
+            }
+
+            .country {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+
+              img {
+                width: 20px;
+                height: 20px;
+              }
+
+              span {
+                font-size: 14px;
+                color: #555;
+              }
+            }
+          }
+        }
+
+        .stars {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          img {
+            height: 18px;
+            width: 18px;
+          }
+
+          span {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffc107;
+          }
+        }
+
+        p {
+          font-weight: 300;
+          line-height: 20px;
+          color: #555;
+        }
+
+        .helpful {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+
+          span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+          }
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
       }
     }
   }
+}
+
+.like,
+.dislike {
+  height: 1rem;
+  width: 1rem;
+}
+
+.helpfulCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
