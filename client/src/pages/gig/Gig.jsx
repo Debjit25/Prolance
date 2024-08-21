@@ -6,6 +6,8 @@ import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 // import Reviews from "../../components/reviews/Reviews";
 import avatar from "/img/noavatar.jpg";
+import { GoClock } from "react-icons/go";
+import { RiLoopLeftFill } from "react-icons/ri";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -21,6 +23,7 @@ function Gig() {
     autoplay: true,
     autoplaySpeed: 3000,
     fade: true,
+    // arrows: true,
   };
 
   return (
@@ -71,6 +74,8 @@ function Gig() {
               </div>
             </div>
             <div className="box">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, vel. Vitae reiciendis odit, temporibus corrupti perspiciatis necessitatibus eligendi, mollitia fugiat nesciunt nostrum soluta, adipisci ratione pariatur itaque asperiores! Rem, fugiat?</p>
+              <hr />
               <div className="items">
                 <div className="item">
                   <span className="title">From</span>
@@ -93,12 +98,40 @@ function Gig() {
                   <span className="desc">English</span>
                 </div>
               </div>
-              <hr />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, vel. Vitae reiciendis odit, temporibus corrupti perspiciatis necessitatibus eligendi, mollitia fugiat nesciunt nostrum soluta, adipisci ratione pariatur itaque asperiores! Rem, fugiat?</p>
             </div>
           </div>
+          <h2>Reviews</h2>
           <div className="reviews">
-            <h2>Reviews</h2>
+            <div className="item">
+              <div className="user">
+                <img src={avatar} alt="" />
+                <div className="info">
+                  <span>John Doe</span>
+                  <div className="country">
+                    <img src="" alt="" />
+                    <span>united States</span>
+                  </div>
+                </div>
+              </div>
+              <div className="stars">
+                <img src="/img/star.png" alt="" />
+                <img src="/img/star.png" alt="" />
+                <img src="/img/star.png" alt="" />
+                <img src="/img/star.png" alt="" />
+                <img src="/img/star.png" alt="" />
+                <span>5</span>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis error iure blanditiis, eaque laborum quia qui eius quibusdam earum beatae expedita eum, recusandae consequatur harum odit porro dolores fugiat corporis.</p>
+            </div>
+
+            <div className="helpful">
+              <span>Helpful? </span>
+              <img src="/img/like.png" alt="" className="like" />
+              <span> Yes </span>
+              <img src="/img/dislike.png" alt="" className="dislike" />
+              <span> No </span>
+            </div>
+            <hr className="spaceHr" />
             <div className="item">
               <div className="user">
                 <img src={avatar} alt="" />
@@ -130,7 +163,7 @@ function Gig() {
             </div>
           </div>
         </div>
-        <div className="reviews">
+        {/* <div className="reviews">
           <h2>Reviews</h2>
           <div className="item">
             <div className="user">
@@ -160,32 +193,33 @@ function Gig() {
             <img src="/img/dislike.png" alt="" className="dislike" />
             <span> No </span>
           </div>
+        </div> */}
+        <div className="right">
+          <div className="price">
+            <h3>1 Ai Generated</h3>
+            <h2>₹ 2 crore</h2>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, nostrum nulla! Dolore repellendus harum quibusdam id neque hic omnis modi vel! Illo maxime perspiciatis saepe deserunt fugit, consequatur tempora debitis.</p>
+          <div className="details">
+            <div className="item">
+              <GoClock />
+              <span>2 Days Delivery</span>
+            </div>
+            <div className="item">
+              <RiLoopLeftFill />
+              <span>5 Revisions</span>
+            </div>
+          </div>
+          <div className="features">
+            <div className="item">
+              <img src="/img/greencheck.png" alt="" />
+              <span>Prompt writing</span>
+            </div>
+          </div>
+          <button>Continue</button>
         </div>
       </div>
-      <div className="right">
-        <div className="price">
-          <h3>1 Ai Generated</h3>
-          <h2>₹ 2 crore</h2>
-        </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, nostrum nulla! Dolore repellendus harum quibusdam id neque hic omnis modi vel! Illo maxime perspiciatis saepe deserunt fugit, consequatur tempora debitis.</p>
-        <div className="details">
-          <div className="item">
-            <img src="/img/clock.png" alt="" />
-            <span>2 Days Delivery</span>
-          </div>
-          <div className="item">
-            <img src="/img/recycle.png" alt="" />
-            <span>5 Revisions</span>
-          </div>
-        </div>
-        <div className="features">
-          <div className="item">
-            <img src="/img/greencheck.png" alt="" />
-            <span>Prompt writing</span>
-          </div>
-        </div>
-        <button>Continue</button>
-      </div>
+
       {/* </div > */}
 
     </div >
