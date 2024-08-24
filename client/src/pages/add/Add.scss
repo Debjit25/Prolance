@@ -55,7 +55,8 @@
           color: white;
           font-weight: 500;
           font-size: 18px;
-          background-color: #1dbf73;
+          border-radius: 10px;
+          background-color: black;
           cursor: pointer;
         }
 
@@ -81,6 +82,8 @@
             border: 1px solid red;
             display: flex;
             align-items: center;
+
+
             gap: 20px;
           }
         }

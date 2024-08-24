@@ -20,7 +20,7 @@ function Navbar() {
     };
   }, []);
 
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const currentUser ={id:1,username:"John Doe", isSeller: true};
 
   const navigate = useNavigate();
 
