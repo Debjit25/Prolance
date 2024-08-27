@@ -62,6 +62,10 @@ const GigSchema = new Schema({
         type:[String],
         required:false,
     },
+    sales:{
+        type: Number,
+        default:0,
+    },
 
 },{
     timestamps:true
