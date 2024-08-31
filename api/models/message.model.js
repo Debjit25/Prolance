@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const messageSchema = new Schema({
+const MessageSchema = new Schema({
     ConversationId:{
         type:String,
         requried:true,
