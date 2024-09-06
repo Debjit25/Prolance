@@ -9,11 +9,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # Environment variables
-.env
+# .env
 
-# Database
-*.sqlite
-*.db
+# # Database
+# *.sqlite
+# *.db
 
 # Directory for the database
 /data/db/
