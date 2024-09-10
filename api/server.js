@@ -8,12 +8,12 @@ import {conversationRoute} from "./routes/conversation.route.js";
 import {messageRoute} from "./routes/message.route.js";
 import {reviewRoute} from "./routes/review.route.js";
 import authRoute from "./routes/auth.route.js";
+import cookieParser from "cookie-parser";
 
 
 
 
 const app = express();
-app.use(express.json());
 dotenv.config();
 
 const connect = async () => {
@@ -26,8 +26,10 @@ const connect = async () => {
     }
 }
 
+app.use(express.json()); // middleware.
+app.use(cookieParser());
 
-app.use("/api/auth", authRoute);
+app.use("/api/auth", authRoute);//Routes
 app.use("/api/users", userRoute);
 app.use("/api/gigs", gigRoute);
 app.use("/api/orders", orderRoute);
